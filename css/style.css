@@ -762,7 +762,7 @@ span {
     position: relative;
     min-height: 100vh;
     padding: 8rem 5%;
-    background: url('images/proj.jpeg') no-repeat center center/cover;
+    background: url('image/proj.jpeg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -1754,4 +1754,5 @@ section.show-animate .habilidades-column {
         text-align: center; 
     }
 }
+
 
