@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfolio </title>
+    <title>Keren Eduarda - Portfolio </title>
 
-    <link rel="icon" type="image/png" href="images/flavicon.png">
+    <link rel="icon" type="image/png" href="../meu portfolio/images/flavicon.png">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -20,18 +20,6 @@
 </head>
  
 <body>
-
-     <div id="popup-sucesso" class="popup">
-    <div class="popup-content">
-        <h3>Mensagem enviada! ✅</h3>
-        <p>
-        Obrigada pelo contato 💜<br>
-        Em breve retornarei a sua mensagem.
-        </p>
-        <button id="fechar-popup">Fechar</button>
-    </div>
-    </div>
-
     <!-- header design -->
     <header class="header">
         <a href="#" class="logo">Keren.<span class="animate" style="--i:1;"></span></a>
@@ -40,9 +28,10 @@
 
         <nav class="navbar">
             <a href="#inicio" class="active">Inicio</a>
-            <a href="#sobre">Sobre</a>
             <a href="#educacao">Educação</a>
+            <a href="#habilidades-tecnicas">Ferramentas</a>
             <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
             <a href="#contato">Contato</a>
 
             <span class="active-nav"></span>
@@ -54,7 +43,7 @@
     <!-- inicio section design -->
     <section class="inicio show-animate" id="inicio">
         <div class="inicio-content">
-            <h1>Olá, Sou a <span> Keren Eduarda</h1>
+            <h1>Olá, Sou a <span>Keren Eduarda</span></h1>
             <div class="text-animate">
                 <h3>Desenvolvedora Frontend</h3>
                
@@ -72,51 +61,18 @@
     <a href="#contato" class="btn"><center>Entre em contato</center></a>
 </div>
 
-<div class="inicio-sci">
-    <a href="https://www.instagram.com/_keren_eduarda_" target="_blank"><i class='bx bxl-instagram'></i></a>
-    <a href="https://www.linkedin.com/in/kéren-eduarda-ferreira" target="_blank"><i class='bx bxl-linkedin'></i></a>
-</div>
+
 </div> 
 
     </section>
 
-    <!-- sobre section design -->
-    <section class="sobre" id="sobre">
-        <h2 class="cabecalho">Sobre <span> Mim</span><span class="animate scroll" style="--i:1;"></span></h2>
-
-        <div class="sobre-img">
-            <img src="images/sobre.png" alt="">
-            <span class="circle-spin"></span>
-            <span class="animate scroll" style="--i:2;"></span>
-        </div>
-
-        <div class="sobre-content">
-            <h3>Desenvolvedora Frontend!</h3><span class="animate scroll" style="--i:3;"></span>
-            <p> Me chamo Keren Eduarda, sou estudante de Análise e Desenvolvimento de Sistemas e atuo como desenvolvedora Frontend.
-Tenho experiência com desenvolvimento web, ensino de tecnologia e criação de interfaces responsivas.
-Gosto de transformar ideias em projetos reais, sempre prezando por organização, boa experiência do usuário e visual profissional.
-Atualmente, estou focada em desenvolver sites e projetos web que gerem valor para pessoas e negócios.
-                <span class="animate scroll" style="--i:4;"></span>
-            </p>
-            <p class="sobre-extra">
-                    Tenho interesse em desenvolvimento web, criação de interfaces modernas e projetos que unam design e funcionalidade.
-                    Atualmente estou focada em evoluir como desenvolvedora frontend, aprimorando boas práticas de código e experiência do usuário.
-                </p>
-            <div class="btn-box btns">
-                
-                <a href="javascript:void(0)" class="btn leia-mais">Leia mais</a>
-                <span class="animate scroll" style="--i:5;"></span>
-            </div>
-        </div>
-    </section>
-
     <!-- educacao section design -->
     <section class="educacao" id="educacao">
-        <h2 class="cabecalho">Minha <span>Jornada</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <h2 class="cabecalho">Minha <span>Jornada</span></h2>
 
         <div class="educacao-row">
             <div class="educacao-column">
-                <h3 class="title">Educação</h3><span class="animate scroll" style="--i:2;"></span>
+                <h3 class="title">Educação</h3>
 
                 <div class="educacao-box">
                     <div class="educacao-content">
@@ -141,12 +97,12 @@ Atualmente, estou focada em desenvolver sites e projetos web que gerem valor par
                         </div>
                     </div>
 
-                    <span class="animate scroll" style="--i:3;"></span>
+                    
                 </div>
             </div>
 
             <div class="educacao-column">
-                <h3 class="title">Experiência</h3><span class="animate scroll" style="--i:4;"></span>
+                <h3 class="title">Experiência</h3>
 
                 <div class="educacao-box">
                     <div class="educacao-content">
@@ -169,47 +125,124 @@ Atualmente, estou focada em desenvolver sites e projetos web que gerem valor par
                         </div>
                     </div>
 
-                    <span class="animate scroll" style="--i:5;"></span>
+                    
                 </div>
             </div>
         </div>
     </section>
+     <!-- Ferramenta section design -->
+      <section class="habilidades-tecnicas" id="habilidades-tecnicas">
+    <h2 class="cabecalho">Minhas <span>Ferramentas</span></h2>
+
+    <div class="carousel-wrapper section-content">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <div class="carousel">
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/html.png" alt="HTML5">
+                </div>
+                <h3>HTML5</h3>
+                <p>Estruturação semântica de páginas web modernas e acessíveis.</p>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/css.png" alt="CSS3">
+                </div>
+                <h3>CSS3</h3>
+                <p>Estilização, responsividade e animações para interfaces modernas.</p>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/js.png" alt="JavaScript">
+                </div>
+                <h3>JavaScript</h3>
+                <p>Interatividade, lógica e comportamento dinâmico no frontend.</p>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/react.png" alt="React">
+                </div>
+                <h3>React</h3>
+                <p>Criação de interfaces escaláveis com componentes reutilizáveis.</p>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/react-native.png" alt="React Native">
+                </div>
+                <h3>React Native</h3>
+                <p>Desenvolvimento de aplicativos móveis multiplataforma.</p>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/firebase.png" alt="Firebase">
+                </div>
+                <h3>Firebase</h3>
+                <p>Backend, autenticação e banco de dados em tempo real.</p>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="../meu portfolio/images/figma.png" alt="Figma">
+                </div>
+                <h3>Figma</h3>
+                <p>Criação de layouts, protótipos e design de interfaces.</p>
+            </div>
+        </div>
+
+        <button class="carousel-btn next">&#10095;</button>
+    <div class="carousel-indicators">
+        <div class="indicator active" data-index="0"></div>
+        <div class="indicator" data-index="1"></div>
+        <div class="indicator" data-index="2"></div>
+        <div class="indicator" data-index="3"></div>
+        <div class="indicator" data-index="4"></div>
+        <div class="indicator" data-index="5"></div>
+        <div class="indicator" data-index="6"></div>
+    </div>
+</section>
+   
     <!-- habilidades section design -->
     <section class="habilidades" id="habilidades">
-        <h2 class="cabecalho">Minhas <span>Habilidades</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <h2 class="cabecalho">Minhas <span>Habilidades</span></h2>
 
         <div class="habilidades-row">
             <div class="habilidades-column">
-                <h3 class="title">Coding Skills</h3><span class="animate scroll" style="--i:2;"></span>
+                <h3 class="title">Soft Skills</h3>
 
                 <div class="habilidades-box">
                     <div class="habilidades-content">
                         <div class="progresso">
-                            <h3>HTML <span>85%</span></h3>
+                            <h3>Comunicação <span>90%</span></h3>
                             <div class="barra"><span></span></div>
                         </div>
 
                         <div class="progresso">
-                            <h3>CSS <span>80%</span></h3>
+                            <h3>Criatividade <span>85%</span></h3>
                             <div class="barra"><span></span></div>
                         </div>
 
                         <div class="progresso">
-                            <h3>JavaScript <span>65%</span></h3>
+                            <h3>Responsabilidade <span>95%</span></h3>
                             <div class="barra"><span></span></div>
                         </div>
 
                         <div class="progresso">
-                            <h3>React <span>50%</span></h3>
+                            <h3>Adaptabilidade <span>80%</span></h3>
                             <div class="barra"><span></span></div>
                         </div>
                     </div>
 
-                    <span class="animate scroll" style="--i:3;"></span>
+                    
                 </div>
             </div>
             <div class="habilidades-column">
-                <h3 class="title">Professional Skills</h3><span class="animate scroll" style="--i:4;"></span>
+                <h3 class="title">Professional Skills</h3>
 
                 <div class="habilidades-box">
                     <div class="habilidades-content">
@@ -234,16 +267,83 @@ Atualmente, estou focada em desenvolver sites e projetos web que gerem valor par
                         </div>
                     </div>
 
-                    <span class="animate scroll" style="--i:5;"></span>
+                    
                 </div>
             </div>
 
         </div>
     </section>
+    <!-- projetos section design -->
+<section class="projetos" id="projetos">
 
+    <div class="projetos-container">
+
+        <div class="projetos-texto">
+            <h1>Meus Projetos</h1>
+            <h2>Incicle – App de Saúde Íntima Feminina</h2>
+
+            <p>
+                O InCicle foi desenvolvido como Trabalho de Conclusão de Curso com foco no 
+                Objetivo de Desenvolvimento Sustentável 3 – Saúde e Bem-Estar.
+                O aplicativo auxilia mulheres no monitoramento do ciclo menstrual,
+                oferecendo informações seguras, lembretes importantes e apoio digital
+                para o cuidado com a saúde íntima.
+            </p>
+        </div>
+
+        <div class="projetos-layout">
+
+            <div class="projeto-direita">
+
+                <div class="card-funcionalidades">
+                    <h3>Principais Funcionalidades:</h3>
+                    <ul>
+                        <li>Monitoramento do ciclo menstrual</li>
+                        <li>Dicas de saúde e higiene íntima</li>
+                        <li>Lembretes de pílula e consultas</li>
+                        <li>Diário íntimo com dados protegidos</li>
+                    </ul>
+                </div>
+
+                <div class="features-box">
+
+                    <div class="feature">
+                        <h4>Monitore seu ciclo</h4>
+                        <p>Controle datas, ovulação e previsões menstruais com praticidade.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h4>Dicas de saúde íntima</h4>
+                        <p>Conteúdos educativos baseados em fontes confiáveis.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h4>Lembretes personalizados</h4>
+                        <p>Notificações para pílulas, consultas e cuidados importantes.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+</section>
     <!-- contato section design -->
+     <!-- popup -->
+       <div id="popup-sucesso" class="popup">
+    <div class="popup-content">
+        <h3>Mensagem enviada! ✅</h3>
+        <p>
+        Obrigada pelo contato 💜<br>
+        Em breve retornarei a sua mensagem.
+        </p>
+        <button id="fechar-popup">Fechar</button>
+    </div>
+    </div>
+
     <section class="contato" id="contato">
-        <h2 class="cabecalho">Entre em<span> Contato</span><span class="animate scroll" style="--i:1;"></span></h2>
+        <h2 class="cabecalho">Entre em<span> Contato</span></h2>
 
         <form id="form-contato">
 
@@ -283,27 +383,32 @@ Atualmente, estou focada em desenvolver sites e projetos web que gerem valor par
   </div>
 
 </form>
+<div class="contato-social">
+    <p>Ou me encontre no LinkedIn</p>
+
+    <a href="https://www.linkedin.com/in/kéren-eduarda-ferreira"
+       target="_blank"
+       class="linkedin-btn">
+        <i class='bx bxl-linkedin'></i>
+        Meu LinkedIn
+    </a>
+</div>
     </section>
 
 
     <!-- rodapé design -->
     <footer class="rodape">
-        <div class="rodape-text">
-            <p>Copyright &copy; 2026 por Keren | Todos os direitos reservados.</p>
-        
-            <span class="animate scroll" style="--i:1;"></span>
-        </div>
+    <div class="rodape-text">
+        <p>Copyright &copy; 2026 por Keren | Todos os direitos reservados.</p>
+    </div>
 
+    <div class="rodape-iconTop">
+        <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        <span class="animate scroll" style="--i:3;"></span>
+    </div>
+    </footer>
 
-        <div class="rodape-iconTop">
-            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
-            <span class="animate scroll" style="--i:3;"></span>
-        </div>
 
     <script src="js/script.js"></script>
 </body>
-
-
 </html>
-
-
