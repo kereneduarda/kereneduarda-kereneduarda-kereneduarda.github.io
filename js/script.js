@@ -1,95 +1,212 @@
-// toggle icon navbar
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+document.addEventListener('DOMContentLoaded', () => {
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
- 
+  /* MENU MOBILE  */
+  const menuIcon = document.querySelector('#menu-icon');
+  const navbar = document.querySelector('.navbar');
 
-// scroll sections
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+  if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    };
+  }
 
-window.onscroll = () => {
+  /*  SCROLL + ANIMAÇÕES  */
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('header nav a');
+  const header = document.querySelector('header');
+  const rodape = document.querySelector('footer');
+
+  window.addEventListener('scroll', () => {
+    const top = window.scrollY;
+
     sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 100;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+      const offset = sec.offsetTop - 300;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute('id');
 
+      if (top >= offset && top < offset + height) {
+        navLinks.forEach(link => link.classList.remove('active'));
 
-        if(top >= offset && top < offset + height) {
-            //active navbar links
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-            // active sections para animacao on scrolls
-            sec.classList.add('show-animate');
+        const activeLink = document.querySelector(`header nav a[href*="${id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+
+        sec.classList.add('show-animate');
+      } else {
+        if (top < offset - 500 || top > offset + height + 500) {
+          sec.classList.remove('show-animate');
         }
-        // se quiser usar animacao para repetir no scroll usa isso
-        else {
-            sec.classList.remove('show-animate');
-        }
-    })
-
-    // sticky header
-    let header = document.querySelector('header');
-
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-    // remove toggle icon and navbar when click navbar links (scroll)
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-
-    // animacao rodape on scroll
-    let rodape = document.querySelector('footer');
-
-    rodape.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
-}
-
-    // leia mais sobre mim
-    const btn = document.querySelector('.leia-mais');
-    const textoExtra = document.querySelector('.sobre-extra');
-
-    btn.addEventListener('click', () => {
-        if (textoExtra.style.display === 'none') {
-        textoExtra.style.display = 'block';
-        btn.textContent = 'Leia menos';
-        } else {
-        textoExtra.style.display = 'none';
-        btn.textContent = 'Leia mais';
-        }
+      }
     });
 
-    // envio + popup
-    const form = document.getElementById("form-contato");
-const popup = document.getElementById("popup-sucesso");
+    if (header) header.classList.toggle('sticky', top > 100);
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+    if (menuIcon && navbar) {
+      menuIcon.classList.remove('bx-x');
+      navbar.classList.remove('active');
+    }
 
-  emailjs.sendForm(
-    "service_im52q3o",
-    "template_0qt0i8q",
-    this,
-    "a5EAC_9Kv0oYgUaJ3" // 🔥 PUBLIC KEY AQUI
-  )
-  .then(() => {
-    form.reset();
-    popup.classList.add("ativo");
-  })
-  .catch((error) => {
-    console.error("EmailJS error:", error);
-    alert("Erro ao enviar. Tente novamente.");
+    if (rodape) {
+      const rodapeOffset = rodape.offsetTop;
+      if (top + window.innerHeight > rodapeOffset + 100) {
+        rodape.classList.add('show-animate');
+      } else {
+        rodape.classList.remove('show-animate');
+      }
+    }
   });
+
+  /*  ANIMAÇÃO INICIAL */
+  window.addEventListener('load', () => {
+    const top = window.scrollY;
+
+    sections.forEach(sec => {
+      const offset = sec.offsetTop - 300;
+      const height = sec.offsetHeight;
+
+      if (top >= offset && top < offset + height) {
+        sec.classList.add('show-animate');
+      }
+    });
+
+    const contato = document.querySelector('.contato');
+    if (contato) contato.classList.add('show-animate');
+  });
+
+  /*  FORM + POPUP  */
+  const form = document.getElementById('form-contato');
+  const popup = document.getElementById('popup-sucesso');
+  const fecharPopup = document.getElementById('fechar-popup');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "service_im52q3o",
+        "template_0qt0i8q",
+        this,
+        "a5EAC_9Kv0oYgUaJ3"
+      )
+      .then(() => {
+        form.reset();
+        if (popup) popup.classList.add('ativo');
+      })
+      .catch(error => {
+        console.error("EmailJS error:", error);
+        alert("Erro ao enviar. Tente novamente.");
+      });
+    });
+  }
+
+  if (fecharPopup && popup) {
+    fecharPopup.addEventListener('click', () => {
+      popup.classList.remove('ativo');
+    });
+  }
+
+  /*  CARROSSEL  */
+  initCarousel(); 
+
 });
 
-  // fechar popup
-  document.getElementById("fechar-popup").addEventListener("click", () => {
-    document
-      .getElementById("popup-sucesso")
-      .classList.remove("ativo");
+
+/*  FUNÇÃO CARROSSEL  */
+function initCarousel() {
+
+  const carousel = document.querySelector('.carousel');
+  const btnPrev = document.querySelector('.carousel-btn.prev');
+  const btnNext = document.querySelector('.carousel-btn.next');
+  const indicators = document.querySelectorAll('.indicator');
+  const cards = document.querySelectorAll('.tool-card');
+
+  if (!carousel || !btnPrev || !btnNext || indicators.length === 0 || cards.length === 0) return;
+
+  let cardWidth = cards[0].offsetWidth + 40; 
+  let currentIndex = 0;
+  let isScrolling = false;
+
+  function updateIndicators() {
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function scrollToIndex(index) {
+    if (isScrolling) return;
+
+    isScrolling = true;
+    currentIndex = Math.max(0, Math.min(index, indicators.length - 1));
+
+    carousel.scrollTo({
+      left: currentIndex * cardWidth,
+      behavior: 'smooth'
+    });
+
+    updateIndicators();
+
+    setTimeout(() => {
+      isScrolling = false;
+    }, 500);
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (currentIndex < indicators.length - 1) {
+      scrollToIndex(currentIndex + 1);
+    } else {
+      scrollToIndex(0);
+    }
   });
+
+  btnPrev.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      scrollToIndex(currentIndex - 1);
+    } else {
+      scrollToIndex(indicators.length - 1);
+    }
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      scrollToIndex(index);
+    });
+  });
+
+  carousel.addEventListener('scroll', () => {
+    const scrollPosition = carousel.scrollLeft;
+    const newIndex = Math.round(scrollPosition / cardWidth);
+
+    if (newIndex !== currentIndex && !isScrolling) {
+      currentIndex = newIndex;
+      updateIndicators();
+    }
+  });
+
+  // Swipe mobile
+  let touchStartX = 0;
+
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && currentIndex < indicators.length - 1) {
+        scrollToIndex(currentIndex + 1);
+      } else if (diff < 0 && currentIndex > 0) {
+        scrollToIndex(currentIndex - 1);
+      }
+    }
+  }, { passive: true });
+
+  // Atualiza largura no resize
+  window.addEventListener('resize', () => {
+    cardWidth = cards[0].offsetWidth + 40; 
+  });
+
+  updateIndicators();
+}
+
