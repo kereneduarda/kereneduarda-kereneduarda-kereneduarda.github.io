@@ -1686,6 +1686,19 @@ section.show-animate .habilidades-column {
 }
 
    @media (max-width: 992px) {
+    .projetos {
+        justify-content: center;
+        background-position: center;
+    }
+
+    .projetos::before {
+        background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.3) 10%,
+            rgba(25,0,45,0.6) 60%,
+            rgba(15,0,30,0.85) 100%
+        );
+    }
 
     .projeto-direita {
         align-items: center !important;
@@ -1754,6 +1767,7 @@ section.show-animate .habilidades-column {
         text-align: center; 
     }
 }
+
 
 
 
