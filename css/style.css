@@ -90,7 +90,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('images/inicio.jpg') no-repeat;
+    background: url('images/inicio-foto.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -762,7 +762,7 @@ span {
     position: relative;
     min-height: 100vh;
     padding: 8rem 5%;
-    background: url('images/proj.jpeg') no-repeat center center/cover;
+    background: url('images/proj-foto.jpeg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -1754,6 +1754,7 @@ section.show-animate .habilidades-column {
         text-align: center; 
     }
 }
+
 
 
 
